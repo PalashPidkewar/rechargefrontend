@@ -1,0 +1,116 @@
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { RiHotelLine } from "react-icons/ri";
+const slides = [
+  {
+    title: 'Fuel Pump',
+    description: 'Compact and reliable fuel pump providing quick roadside refueling for travelers and commercial vehicles.'
+  },
+  {
+    title: 'EV Stations',
+    description: 'Smart EV charging point offering convenient roadside charging for electric vehicles on the go.'
+  },
+  {
+    title: 'Food Court',
+    description: 'A small and clean food stop offering quick meals and refreshments for travelers along the roadside.'
+  },
+  {
+    title: 'Vehicle Repairing',
+    description: 'A roadside service point providing quick vehicle repairs and maintenance for travelers.'
+  },
+  {
+    title: 'Children Play Area',
+    description: 'A small and safe play space designed for kids to relax and enjoy during travel breaks.'
+  },
+  {
+    title: 'Medical Room (First Aid)',
+    description: 'A first aid facility offering medical support for emergencies during road travel.'
+  },
+  {
+    title: 'Parking',
+    description: 'A secure roadside parking area for cars and heavy vehicles to rest safely during travel.'
+  },
+  {
+    title: 'Restrooms',
+    description: 'A clean and accessible roadside restroom facility for travelers to freshen up during their journey.'
+  },
+  {
+    title: 'Washroom',
+    description: 'A small and hygienic roadside washroom facility ensuring comfort and cleanliness for travelers.'
+  }
+];
+
+export default function FullScreenLocalVideo() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % slides.length);
+        setFade(true);
+      }, 500); // fade out duration
+    }, 3000); // total slide duration
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="relative w-screen min-h-[calc(100vh-90px)] sm:min-h-[100vh] md:h-screen overflow-hidden">
+      {/* ✅ Side Badge Component Code Inline */}
+      <motion.div
+        initial={{ x: '-10%' }}
+        whileHover={{ x: 0 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+        className="  hidden sm:flex  fixed top-1/2 -translate-y-1/2 left-0 bg-blue-600 text-white 
+                    items-center gap-2 rounded-r-full shadow-lg cursor-pointer 
+                   overflow-hidden group w-12 hover:w-52 transition-all duration-300 z-20"
+      >
+        {/* Circle / Badge */}
+        <div className="flex items-center justify-center w-12 h-12 bg-orange-500 flex-shrink-0">
+          <span className="text-lg font-bold">25+</span>
+        </div>
+
+        {/* Full Text on Hover */}
+        <span className="whitespace-nowrap text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+  <RiHotelLine className="inline mr-3 text-yellow-400 text-3xl" />
+  Wayside Amenities
+</span>
+
+      </motion.div>
+
+      {/* Background Video */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src="/video/Recharge.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Black Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/10" />
+
+      {/* Rotating Text */}
+<div
+  className={`absolute bottom-16 md:bottom-20 lg:bottom-32 left-5 md:left-10 text-white z-10 max-w-md transition-opacity duration-500 ${
+    fade ? 'opacity-100' : 'opacity-0'
+  }`}
+>
+  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug drop-shadow-2xl bg-gradient-to-r from-pink-700 via-green-700 to-blue-700 bg-clip-text text-transparent inline-block w-fit">
+    {slides[currentIndex].title}
+  </h1>
+  <p className="mt-2 text-sm sm:text-base md:text-base text-gray-200 drop-shadow-md">
+    {slides[currentIndex].description}
+  </p>
+</div>
+
+    </div>
+  );
+}
