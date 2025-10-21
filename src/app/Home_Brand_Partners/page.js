@@ -14,10 +14,13 @@ const logos = [
   "/brands/image-1723268007112.png",
   "/brands/image-1723268037506.png",
   "/brands/image-1723268070044.png",
-  "/brands/image-1723268098037 (1).png",
+  "/brands/Pizza_Hut_international_logo_2014.svg.png",
   "/brands/image-1723268124023.png",
   "/brands/ganis_icecream.png",
   "/brands/bikanerwala.png",
+
+  
+    "/brands/image-1723268098037 (1).png",
 ];
 
 export default function BrandPartners() {
@@ -46,6 +49,7 @@ export default function BrandPartners() {
                 transition={{ duration: 0.8 }}
                 className="text-4xl font-bold fonty text-[#0078AE] lg:pl-8"
               >
+                
                 <span className="text-5xl">O</span>ur Brand Partners
                 <span className="text-orange-500">..</span>
               </motion.h1>
@@ -60,11 +64,11 @@ export default function BrandPartners() {
           {/* Grid with border */}
           
           <div className="relative">
-            <div className="  grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5
-    gap-3 sm:gap-4 md:gap-6 items-center justify-center
-    border-2 border-gray-300 rounded-md p-4 mx-3 sm:p-5
-    bg-white/90 backdrop-blur-sm
-    shadow-lg sm:shadow-none">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5
+  gap-3 sm:gap-4 md:gap-6 items-center justify-center
+  border-2 border-gray-300 rounded-md p-4 mx-3 sm:p-5
+  bg-white/90 backdrop-blur-sm
+  shadow-[0_4px_25px_rgba(0,0,0,0.3)]">
               {logos.map((logo, index) => (
                 <div key={index} className="flex justify-center items-center h-12 sm:h-16 md:h-20 lg:h-16">
                   <img

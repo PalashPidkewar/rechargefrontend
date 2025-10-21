@@ -197,14 +197,14 @@ import {
   FaFacebook
 } from 'react-icons/fa';
 import { TbGridDots } from 'react-icons/tb';
-
+import { ImBlog } from "react-icons/im";
 import { FaRoad } from "react-icons/fa";
 import { MdOutlineWarehouse } from "react-icons/md";
 import { RiHotelLine } from "react-icons/ri";
 import { FaRoadBarrier } from "react-icons/fa6";
 import { GiCrystalBars } from "react-icons/gi";
 import { SiInteractiondesignfoundation } from "react-icons/si";
-
+import { CiLogin } from "react-icons/ci";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showSocialBar, setShowSocialBar] = useState(true);
@@ -297,7 +297,7 @@ const Navbar = () => {
 
         <div className="flex items-center space-x-3 sm:space-x-4 py-1 relative">
           <a
-            href="https://www.linkedin.com/company/path-india-ltd-/?originalSubdomain=in"
+            href="https://www.linkedin.com/company/path-recharge/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-700 hover:animate-bounce transition"
@@ -314,9 +314,27 @@ const Navbar = () => {
             <FaInstagram size={18} />
           </a>
 
+          <a
+            href="https://www.facebook.com/people/PATH-Recharge/61568281787745/?mibextid=wwXIfr&rdid=PKlL1XaKRU7zYjsk&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F169cBEL7LP%2F%3Fmibextid%3DwwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:animate-bounce transition"
+          >
+            <FaFacebook size={20} />
+          </a>
+
+         <Link
+  href="/Nav_Social_mediablog"
+  rel="noopener noreferrer"
+  className="text-gray-600 hover:animate-bounce transition"
+>
+  <ImBlog size={15} />
+</Link>
+
+
           {/* Dropdown - Mobile: Click, Desktop: Hover */}
-          <div 
-            ref={dropdownRef} 
+          <div
+            ref={dropdownRef}
             className="relative"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -329,7 +347,7 @@ const Navbar = () => {
             </button>
 
             {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-60 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+              <div className="absolute right-0 mt-2 w-45 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
                 <ul className="py-1 text-sm text-gray-700">
                   {[
                     { name: "Path Highway", link: "#", icon: <FaRoad className="inline mr-2 text-blue-500" /> },
@@ -376,7 +394,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex md:items-center md:ml-auto space-x-4 pr-2">
+          <div className="hidden md:flex md:items-center md:ml-auto space-x-4 pr-2 ">
             {navItems.map(item =>
               item.download ? (
                 <a
@@ -460,26 +478,40 @@ const Navbar = () => {
                 )
               )}
               {/* Mobile-only Login Button */}
+              <div className="border-t border-gray-300 "></div>
               <div className="flex items-center justify-between px-3 py-2 rounded-md">
-                {/* Login Button */}
-                <Link
-                  href="/Login"
-                  onClick={() => setIsOpen(false)}
-                  className="text-base font-medium text-blue-500 cursor-pointer"
-                >
-                  Login
-                </Link>
+  {/* Left - Login Button */}
+  <Link
+  href="/Login"
+  onClick={() => setIsOpen(false)}
+  className="flex items-center gap-2 text-base font-semibold text-blue-500 hover:text-blue-600 transition-all duration-200 cursor-pointer"
+>
+  <span>Login</span>
+  <CiLogin className="text-xl text-red-400" />
+</Link>
 
-                {/* Instagram Icon Link */}
-                <a
-                  href="https://www.instagram.com/pathrecharge/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-pink-600 hover:text-pink-700 text-xl"
-                >
-                  <FaInstagram />
-                </a>
-              </div>
+  {/* Right - Social Icons */}
+  <div className="flex items-center gap-4">
+    <a
+      href="https://www.instagram.com/pathrecharge/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-pink-600 hover:text-pink-700 text-xl"
+    >
+      <FaInstagram />
+    </a>
+
+    <a
+      href="https://www.facebook.com/people/PATH-Recharge/61568281787745/?mibextid=wwXIfr&rdid=PKlL1XaKRU7zYjsk&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F169cBEL7LP%2F%3Fmibextid%3DwwXIfr"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-600 hover:animate-bounce transition text-xl"
+    >
+      <FaFacebook size={20} />
+    </a>
+  </div>
+</div>
+
             </div>
           </div>
         )}

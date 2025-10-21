@@ -136,15 +136,28 @@ const PanIndiaNetwork = () => {
             </div>
           ) : (
             <>
-              <div className="flex items-center gap-2 bg-blue-600 text-white px-3 py-1 rounded">
-                Office
-              </div>
-              <div className="flex items-center gap-2 bg-yellow-400 text-black px-3 py-1 rounded">
-                Logistics
-              </div>
-              <div className="flex items-center gap-2 bg-orange-500 text-white px-3 py-1 rounded">
-                Manufacturing
-              </div>
+             <div className="flex flex-col items-center gap-4">
+  {/* Top Row */}
+  <div className="flex flex-wrap justify-center gap-4">
+    <div className="flex items-center gap-2 bg-blue-600 text-white px-3 py-1 rounded">
+      Office
+    </div>
+    <div className="flex items-center gap-2 bg-yellow-400 text-black px-3 py-1 rounded">
+      Logistics
+    </div>
+    <div className="flex items-center gap-2 bg-orange-500 text-white px-3 py-1 rounded">
+      Manufacturing
+    </div>
+  </div>
+
+  {/* Bottom Row (Centered) */}
+  <div className="flex justify-center">
+    <div className="flex items-center gap-2 bg-green-400 text-white px-2 py-1 rounded">
+      45+ toll plaza
+    </div>
+  </div>
+</div>
+
             </>
           )}
         </div>

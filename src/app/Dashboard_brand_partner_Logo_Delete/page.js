@@ -6,7 +6,7 @@ import SidebarLayout from "../components/SidebarLayout";
 
 export default function BrandPartnerPage() {
   const [logos, setLogos] = useState([]);
-  const backendURL = "http://localhost:5000"; // 🧠 change if deployed
+  // const backendURL = "http://localhost:5000"; // 🧠 change if deployed
 
   // 🧠 Fetch all logos
   const fetchLogos = async () => {

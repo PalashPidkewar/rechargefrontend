@@ -12,7 +12,7 @@ const Home_Pathrecharge_contact = () => {
       }}
     >
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/10 to-black/5"></div>
 
       {/* Content */}
       <motion.div

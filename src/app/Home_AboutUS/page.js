@@ -80,20 +80,20 @@ const Home_aboutus = () => {
       {/* Content Section */}
       <div className="relative">
         {/* Heading */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12 text-left">
+        <div className="max-w-7xl mx-auto px-0 sm:px-6 pt-8 sm:pt-12 text-left">
           <motion.h2
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold fonty text-[#0078AE] mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl lg:text-4xl font-bold fonty text-[#0078AE] mb-4 sm:mb-6 lg:mb-0"
           >
-            <span className="text-4xl sm:text-5xl lg:text-6xl">A</span>bout Us
+            <span className="text-5xl sm:text-5xl lg:text-5xl">A</span>bout Us
             <span className="text-orange-500">.</span>
           </motion.h2>
         </div>
 
         {/* Section Content */}
-        <section className="py-6 sm:py-10 px-4 sm:px-6 max-w-7xl mx-auto">
+        <section className="py-3 sm:py-10 pl-0 pr-2 sm:px-6 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-10 gap-8 lg:gap-10 items-center">
             {/* Left: Text */}
        <div className="md:col-span-7 fonty">
@@ -114,13 +114,13 @@ const Home_aboutus = () => {
 
 
             {/* Right: Image */}
-            <div className="md:col-span-3 flex justify-center mt-6 md:mt-0 lg:ml-10">
+            <div className="md:col-span-3 flex justify-center mt-1 md:mt-0 lg:ml-10">
               <Image
-                src="/Image/pathrechargelogo1.png"
+                src="/Image/removeaboutbackground.png"
                 alt="Highway Amenities"
-                width={300}
-                height={300}
-                className="w-40 sm:w-56 md:w-full max-w-[250px] h-auto object-contain"
+                width={320}
+                height={320}
+                className="w-70 sm:w-56 md:w-full max-w-[450px] h-auto object-contain"
               />
             </div>
           </div>

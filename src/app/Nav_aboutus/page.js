@@ -37,11 +37,11 @@ export default function Aboutus() {
           {/* Right: Image */}
           <div className="md:col-span-3 flex justify-center lg:ml-10">
             <Image
-                          src="/Image/pathrechargelogo1.png"
+                          src="/Image/removeaboutbackground.png"
                           alt="Highway Amenities"
                           width={300}
                           height={300}
-                          className="w-40 sm:w-56 md:w-full max-w-[250px] h-auto object-contain"
+                          className="w-40 sm:w-56 md:w-full max-w-[450px] h-auto object-contain"
                         />
           </div>
         </div>

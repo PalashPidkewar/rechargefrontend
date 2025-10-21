@@ -27,26 +27,26 @@
 //       <section className="py-6 px-4 sm:px-6 lg:px-8 bg-white  mb-10">
 //         <div className="max-w-7xl mx-auto">
 //           {/* Heading */}
-          // <div className="flex flex-col md:flex-row justify-between mb-12">
-          //   <div className="text-left">
-          //     <motion.h1
-          //       initial={{ opacity: 0, y: -30 }}
-          //       animate={{ opacity: 1, y: 0 }}
-          //       transition={{ duration: 0.8 }}
+// <div className="flex flex-col md:flex-row justify-between mb-12">
+//   <div className="text-left">
+//     <motion.h1
+//       initial={{ opacity: 0, y: -30 }}
+//       animate={{ opacity: 1, y: 0 }}
+//       transition={{ duration: 0.8 }}
 
-          //       className="text-4xl font-bold fonty  text-[#0078AE]  lg:pl-8">
-          //       <span className="text-5xl">O</span>ur Brand Partners
-          //       <span className="text-orange-500">.</span>
-          //     </motion.h1>
+//       className="text-4xl font-bold fonty  text-[#0078AE]  lg:pl-8">
+//       <span className="text-5xl">O</span>ur Brand Partners
+//       <span className="text-orange-500">.</span>
+//     </motion.h1>
 
 
-          //   </div>
-          //   <div className="text-left max-w-lg">
-          //     <p className="text-gray-400 max-w-3xl text-base lg:pl-8 lg:pr-5 lg:pb-8">
-          //       Path Recharge works hand-in-hand with top brands in food & beverage, automotive services, and lifestyle retail to offer travelers everything they need on the go. 
-          //     </p>
-          //   </div>
-          // </div>
+//   </div>
+//   <div className="text-left max-w-lg">
+//     <p className="text-gray-400 max-w-3xl text-base lg:pl-8 lg:pr-5 lg:pb-8">
+//       Path Recharge works hand-in-hand with top brands in food & beverage, automotive services, and lifestyle retail to offer travelers everything they need on the go. 
+//     </p>
+//   </div>
+// </div>
 
 //           {/* Animated Grid */}
 //           <motion.div
@@ -136,7 +136,7 @@ export default function Our_BrandPartnersPage() {
       <section className="py-6 px-4 sm:px-6 lg:px-8 bg-white mb-10">
         <div className="max-w-7xl mx-auto">
           {/* Heading */}
-         <div className="flex flex-col md:flex-row justify-between mb-12">
+          <div className="flex flex-col md:flex-row justify-between mb-12">
             <div className="text-left">
               <motion.h1
                 initial={{ opacity: 0, y: -30 }}
@@ -145,46 +145,53 @@ export default function Our_BrandPartnersPage() {
 
                 className="text-4xl font-bold fonty  text-[#0078AE]  lg:pl-8">
                 <span className="text-5xl">O</span>ur Brand Partners
-                <span className="text-orange-500">.</span>
+                <span className="text-orange-500">..</span>
               </motion.h1>
 
 
             </div>
             <div className="text-left max-w-lg">
               <p className="text-gray-400 max-w-3xl text-base lg:pl-8 lg:pr-5 lg:pb-8 pt-4">
-                Path Recharge works hand-in-hand with top brands in food & beverage, automotive services, and lifestyle retail to offer travelers everything they need on the go. 
+                Path Recharge works hand-in-hand with top brands in food & beverage, automotive services, and lifestyle retail to offer travelers everything they need on the go.
               </p>
             </div>
           </div>
 
           {/* Logos Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center justify-center lg:pt-10 border-2 border-gray-200 rounded-md p-5 min-h-[150px]">
-            {loading ? (
-              <div className="col-span-full text-center text-gray-500">Loading...</div>
-            ) : logos.length === 0 ? (
-              <div className="col-span-full text-center text-gray-500">No logos available</div>
-            ) : (
-              logos.map((logo) => (
-                <div
-                  key={logo.id}
-                  className="flex justify-center items-center h-18 p-2  "
-                >
-                  <motion.img
-                    src={`${axiosInstance.defaults.baseURL}/${logo.logo_path}`}
-                    alt={`Brand logo ${logo.id}`}
-                    className="h-full object-contain"
-                    loading="lazy"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
-                    onError={(e) => {
-                      e.target.src =
-                        'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%23ddd"/><text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="%23999">No Image</text></svg>';
-                    }}
-                  />
-                </div>
-              ))
-            )}
-          </div>
+          <div
+  className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 
+  gap-6 items-center justify-center lg:pt-10 
+  border-2 border-gray-200 rounded-xl p-5 min-h-[150px] 
+  bg-white/90 backdrop-blur-sm 
+  shadow-[0_0_25px_rgba(0,0,0,0.25)] transition-all duration-300"
+>
+  {loading ? (
+    <div className="col-span-full text-center text-gray-500">Loading...</div>
+  ) : logos.length === 0 ? (
+    <div className="col-span-full text-center text-gray-500">No logos available</div>
+  ) : (
+    logos.map((logo) => (
+      <div
+        key={logo.id}
+        className="flex justify-center items-center h-18 p-2"
+      >
+        <motion.img
+          src={`${axiosInstance.defaults.baseURL}/${logo.logo_path}`}
+          alt={`Brand-${logo.id}`}
+          className="h-full object-contain transition-transform duration-500 hover:scale-105"
+          loading="lazy"
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: 'spring', stiffness: 300 }}
+          onError={(e) => {
+            e.target.src =
+              'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%23ddd"/><text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="%23999">No Image</text></svg>';
+          }}
+        />
+      </div>
+    ))
+  )}
+</div>
+
 
           {/* Decorative Cut Line + Center Logo */}
           {/* <div className="absolute bottom-0 right- h-[2px] w-32 bg-white z-10"></div>
@@ -193,19 +200,19 @@ export default function Our_BrandPartnersPage() {
           </div> */}
 
           {/* Decorative Top Tag */}
-          
+
         </div>
       </section>
 
 
       {/* Footer Logo (Right-Aligned) */}
-<div className="flex justify-end items-center px-6 lg:px-30 py-0 mt-[-45]">
-  <img
-    src="/Image/pathrechargelogo1.png"
-    alt="Path Recharge Logo"
-    className="h-12 w-auto opacity-80 hover:opacity-100 transition duration-300"
-  />
-</div>
+      <div className="flex justify-end items-center px-6 lg:px-30 py-0 mt-[-45]">
+        <img
+          src="/Image/pathrechargelogo1.png"
+          alt="Path Recharge Logo"
+          className="h-12 w-auto opacity-80 hover:opacity-100 transition duration-300"
+        />
+      </div>
       {/* Bottom Border */}
       <div className="w-full h-[1px] bg-gray-300 lg:mt-5"></div>
 

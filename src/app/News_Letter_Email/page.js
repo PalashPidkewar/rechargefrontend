@@ -164,7 +164,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import axiosInstance from "../utils/axiosInstance"; // use instance
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram , FaYoutube , FaLinkedin  } from "react-icons/fa";
 
 export default function Newsletter_Email() {
   const headingRef = useRef(null);
@@ -232,7 +232,7 @@ export default function Newsletter_Email() {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-white/50"></div>
+        <div className="absolute inset-0 bg-white/30"></div>
         <div className="relative z-10 max-w-7xl mx-auto">
           {/* Heading + Toggle Button */}
           <div className="flex flex-row items-center justify-between lg:pl-10 flex-wrap gap-3 w-full mb-25">
@@ -265,7 +265,7 @@ export default function Newsletter_Email() {
             </button>
           </div>
 
-          <div className="relative z-0 flex flex-col lg:flex-row bg-green-200 rounded-lg overflow-visible border border-gray-300 shadow-2xl shadow-gray-400/50 backdrop-blur-sm transition-all duration-500 hover:shadow-gray-500/60 hover:scale-[1.01]">
+          <div className="relative z-0 flex flex-col lg:flex-row bg-green-200 rounded-lg overflow-visible border border-gray-300 shadow-2xl shadow-gray-400/50 backdrop-blur-sm transition-all duration-500 hover:shadow-gray-500/60 hover:scale-[1.01] ">
             {/* Left Image */}
             <div className="w-full lg:w-1/2 relative flex items-start justify-center px-4 lg:pl-6 mb-6 lg:mb-5">
               <div className="relative -mt-14 z-10 w-full lg:max-w-[90%] h-[300px] sm:h-[350px] lg:h-[300px]">
@@ -292,11 +292,38 @@ export default function Newsletter_Email() {
                     <div key={currentNews.id} className="relative">
                       <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mt-2">{currentNews.title}</h2>
                       <p className="text-sm text-gray-700 mt-2">{currentNews.description}</p>
-                      <div className="flex justify-end mt-4">
-                        <a href="https://www.instagram.com/path_india/?hl=en" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:scale-110 transition-transform">
-                          <FaInstagram size={24} />
-                        </a>
-                      </div>
+                   <div className="flex flex-col items-end mt-4 space-y-3">
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/path_india/?hl=en"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-pink-600 hover:scale-110 transition-transform"
+  >
+    <FaInstagram size={24} />
+  </a>
+
+  {/* YouTube */}
+  <a
+    href="https://www.youtube.com/@PathRecharge"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-red-600 hover:scale-110 transition-transform"
+  >
+    <FaYoutube size={24} />
+  </a>
+
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/company/path-recharge/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-700 hover:scale-110 transition-transform"
+  >
+    <FaLinkedin size={24} />
+  </a>
+</div>
+
                     </div>
                   )}
                 </>

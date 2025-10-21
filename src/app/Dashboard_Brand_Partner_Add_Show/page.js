@@ -103,7 +103,7 @@ export default function BrandPartnerPage() {
                 >
                   <div className="w-full h-24 flex items-center justify-center">
                     <img
-                      src={`http://localhost:5000/${logo.logo_path}`}
+                     src={`${axiosInstance.defaults.baseURL}/${logo.logo_path}`}
                       alt={`Brand-${logo.id}`}
                       className="max-w-full max-h-full object-contain"
                       onError={(e) => {
