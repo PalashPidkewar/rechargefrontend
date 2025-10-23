@@ -2,6 +2,7 @@
 'use client';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Link from 'next/link';
 
 const logos = [
   "/brands/a.jpg",
@@ -47,10 +48,10 @@ export default function BrandPartners() {
                 initial={{ opacity: 0, y: -30 }}
                 animate={headingInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8 }}
-                className="text-4xl font-bold fonty text-[#0078AE] lg:pl-8"
+                className=" text-3xl sm:text-4xl  font-bold fonty text-[#0078AE] lg:pl-8"
               >
                 
-                <span className="text-5xl">O</span>ur Brand Partners
+                <span className="text-4xl sm:text-5xl">O</span>ur Brand Partners
                 <span className="text-orange-500">..</span>
               </motion.h1>
             </div>
@@ -95,9 +96,15 @@ export default function BrandPartners() {
           </div>
          
         </div>
+
+
       </section>
+
+
 
       <div className="w-full h-[1px] bg-gray-300 lg:mt-5"></div>
     </div>
   );
 }
+
+

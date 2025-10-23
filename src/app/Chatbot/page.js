@@ -9,7 +9,22 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState('');
   const [userId, setUserId] = useState(null);
+  const [showButton, setShowButton] = useState(false); // 👈 added
   const chatWindowRef = useRef(null);
+
+  // ✅ Show button only after scrolling 200px
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 235) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     if (isOpen && chatWindowRef.current) {
@@ -56,8 +71,8 @@ const Chatbot = () => {
 
   return (
     <>
-      {/* Floating Chat Icon */}
-      {!isOpen && (
+      {/* Floating Chat Icon (only after scroll) */}
+      {showButton && !isOpen && (
         <button
           onClick={() => setIsOpen(true)}
           className="fixed bottom-4 left-3 bg-blue-600 text-white p-2 rounded-full shadow-lg hover:bg-blue-700 z-50 transition-transform transform hover:scale-110"
@@ -66,7 +81,7 @@ const Chatbot = () => {
         </button>
       )}
 
-      {/* Chat Window with Smooth Transition */}
+      {/* Chat Window */}
       <div
         className={`fixed bottom-5 left-5 w-[90%] sm:w-80 md:w-96 bg-white border border-gray-300 rounded-lg shadow-lg z-50 flex flex-col max-h-[50vh] sm:max-h-[60vh] md:max-h-[50vh] 
         transform transition-all duration-300 ease-in-out origin-bottom-left
@@ -86,21 +101,16 @@ const Chatbot = () => {
             const isBot = msg.from === 'bot';
             return (
               <div key={idx} className={`flex ${isBot ? 'justify-start' : 'justify-end'} items-start`}>
-
-   {isBot && (
-  <div className="relative w-10 h-10 mr-2 mt-[-4px]">
-    <img
-      src="/Image/logo.png"
-      alt="Bot Logo"
-      className="w-full h-full object-contain bg-white rounded-lg shadow-sm"
-    />
-
-    {/* 🟢 Green Online Dot */}
-    <span className="absolute bottom-0 right-0 block w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
-  </div>
-)}
-
-
+                {isBot && (
+                  <div className="relative w-10 h-10 mr-2 mt-[-4px]">
+                    <img
+                      src="/Image/logo.png"
+                      alt="Bot Logo"
+                      className="w-full h-full object-contain bg-white rounded-lg shadow-sm"
+                    />
+                    <span className="absolute bottom-0 right-0 block w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
+                  </div>
+                )}
                 <div
                   className={`p-2 rounded-md max-w-xs whitespace-pre-line ${
                     isBot
@@ -144,14 +154,12 @@ const Chatbot = () => {
                 Send
               </button>
             </form>
-
-            
           )}
-          <p className="text-xs text-center mt-2 text-gray-500 flex items-center justify-center space-x-1">
-  <span>powered by:</span>
-  <img src="/Image/logo.png" alt="Logo" className="h-4 w-5" />
-</p>
 
+          <p className="text-xs text-center mt-2 text-gray-500 flex items-center justify-center space-x-1">
+            <span>powered by:</span>
+            <img src="/Image/logo.png" alt="Logo" className="h-4 w-5" />
+          </p>
         </div>
       </div>
     </>

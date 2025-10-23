@@ -241,16 +241,16 @@ export default function Newsletter_Email() {
               initial={{ opacity: 0, y: -30 }}
               animate={headingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="text-4xl sm:text-4xl md:text-5xl font-bold fonty text-[#0078AE]"
+              className="text-3xl sm:text-4xl  md:text-5xl lg:text-4xl font-bold fonty text-[#0078AE]"
             >
               {showNewsroom ? (
                 <>
-                  <span className="text-5xl sm:text-5xl">N</span>ews Room
+                  <span className="text-4xl sm:text-5xl">N</span>ews Room
                   <span className="text-orange-500">..</span>
                 </>
               ) : (
                 <>
-                  <span className="text-5xl sm:text-5xl">N</span>ews Letter
+                  <span className="text-4xl sm:text-5xl">N</span>ews Letter
                   <span className="text-orange-500">..</span>
                 </>
               )}
