@@ -268,7 +268,7 @@ export default function Newsletter_Email() {
           <div className="relative z-0 flex flex-col lg:flex-row bg-green-200 rounded-lg overflow-visible border border-gray-300 shadow-2xl shadow-gray-400/50 backdrop-blur-sm transition-all duration-500 hover:shadow-gray-500/60 hover:scale-[1.01] ">
             {/* Left Image */}
             <div className="w-full lg:w-1/2 relative flex items-start justify-center px-4 lg:pl-6 mb-6 lg:mb-5">
-              <div className="relative -mt-14 z-10 w-full lg:max-w-[90%] h-[300px] sm:h-[350px] lg:h-[300px]">
+              <div className="relative -mt-14 z-10 w-full lg:max-w-[90%] h-[200px] sm:h-[350px] lg:h-[300px]">
                 <img
                   src={
                     showNewsroom

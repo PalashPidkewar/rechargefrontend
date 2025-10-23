@@ -217,9 +217,9 @@ export default function Home_Catelog() {
                 initial={{ opacity: 0, y: -30 }}
                 animate={headingInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8 }}
-                className="text-4xl font-bold fonty text-[#0078AE] lg:pl-8"
+                className="text-3xl sm:text-4xl font-bold fonty text-[#0078AE] lg:pl-8"
               >
-                <span className="text-5xl">C</span>atelog
+                <span className="text-4xl sm:text-5xl">C</span>atelog
                 <span className="text-gray-400 text-sm"> gallery</span>                 
                 <span className="text-orange-500">..</span>
               </motion.h1>

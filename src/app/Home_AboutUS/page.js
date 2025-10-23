@@ -85,7 +85,7 @@ const Home_aboutus = () => {
     alert('Link copied to clipboard!');
   };
 
-  return (
+  return ( <>
     <div
       className="relative bg-cover bg-center bg-no-repeat px-5"
       style={{ backgroundImage: "url('/homecontactimg/gpt4.jpg')" }}
@@ -143,11 +143,11 @@ const Home_aboutus = () => {
             </div>
 
             <div className="flex justify-between items-center my-2 text-xl">
-              <FaFacebookF className="cursor-pointer text-[#1877F2] hover:brightness-90" />
-              <FaInstagram className="cursor-pointer text-[#E4405F] hover:brightness-90" />
-              <FaTwitter className="cursor-pointer text-[#1DA1F2] hover:brightness-90" />
-              <FaEnvelope className="cursor-pointer text-[#EA4335] hover:brightness-90" />
-              <FaWhatsapp className="cursor-pointer text-[#25D366] hover:brightness-90" />
+              <FaFacebookF className="cursor-pointer text-[#1877F2] hover:brightness-90" onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`, "_blank")} />
+              <FaInstagram className="cursor-pointer text-[#E4405F] hover:brightness-90" onClick={() => window.open('https://www.instagram.com/pathrecharge/', "_blank")} />
+              <FaTwitter className="cursor-pointer text-[#1DA1F2] hover:brightness-90" onClick={() => window.open(`https://twitter.com/intent/tweet?url=${shareUrl}`, "_blank")} />
+              <FaEnvelope className="cursor-pointer text-[#EA4335] hover:brightness-90"   onClick={() => window.location.href = `mailto:?subject=Check this out&body=${shareUrl}`} />
+              <FaWhatsapp className="cursor-pointer text-[#25D366] hover:brightness-90" onClick={() => window.open(`https://api.whatsapp.com/send?text=${shareUrl}`, "_blank")} />
             </div>
 
             <div className="mt-3">
@@ -201,9 +201,12 @@ const Home_aboutus = () => {
         </section>
 
         {/* Divider */}
-        <div className="w-full h-[1px] bg-gray-300"></div>
+     
       </div>
+        
     </div>
+     <div className="w-full h-[1px] bg-gray-300"></div>
+   </>
   );
 };
 
