@@ -17,6 +17,7 @@ import Chatbot from "./Chatbot/page";
 export default function Home() {
   return (
  < >
+  <div className="w-full overflow-x-hidden mx-auto">
  <BackToTopButton/>
 
  <EnquireButton/>
@@ -33,6 +34,7 @@ export default function Home() {
    <Home_Pathrecharge_conatct/>
  <Newsletter_Email/>
 <FeedbackForm/>
+</div>
  </>
   );
 }

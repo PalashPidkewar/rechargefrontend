@@ -11,7 +11,7 @@ const SolutionBox = ({ icon, title, description }) => {
 
       {/* Text */}
       <div>
-        <h3 className="text-base lg:text-xl font-semibold text-gray-800 mb-1 lg:mb-3">
+        <h3 className="text-base lg:text-xl font-semibold text-gray-800 mb-1 lg:mb-3 hover:text-orange-300">
           {title}
         </h3>
         <p className="text-sm text-gray-600">{description}</p>

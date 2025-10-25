@@ -59,30 +59,52 @@ export default function FullScreenLocalVideo() {
   }, []);
 
   return (
-    // w-screen
-      <div className="relative w-full min-h-[calc(100vh-90px)] sm:min-h-[100vh] md:h-screen overflow-hidden">
-
+    <div className="relative w-screen min-h-[calc(100vh-90px)] sm:min-h-[100vh] md:h-screen overflow-hidden">
+      
       {/* ✅ Side Badge Component Code Inline */}
+  <motion.div
+      initial={{ x: '-10%' }}
+      whileHover={{ x: 0 }}
+      transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+      className="hidden sm:flex fixed top-1/2 -translate-y-1/2 left-0 bg-gradient-to-r from-blue-600 to-blue-700 text-white items-center gap-2 rounded-r-full shadow-xl cursor-pointer overflow-hidden group w-12 hover:w-52 transition-all duration-300 z-20"
+    >
+      {/* Circle Badge with Glow */}
+      <div className="relative flex items-center justify-center w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 flex-shrink-0">
+        <span className="relative z-10 text-lg font-bold">25+</span>
+        
+        {/* Pulsating Glow */}
+        <motion.div
+          className="absolute inset-0 bg-orange-400/50 rounded-full blur-md"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.5, 0.8, 0.5],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+
+      {/* Full Text with Icon */}
+      <span className="flex items-center gap-2 whitespace-nowrap text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 pr-4">
+        <motion.div
+          animate={{ rotate: [0, 10, -10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 1 }}
+        >
+          <RiHotelLine className="text-yellow-400 text-2xl drop-shadow-lg" />
+        </motion.div>
+        <span>Wayside Amenities</span>
+      </span>
+
+      {/* Shine Effect */}
       <motion.div
-        initial={{ x: '-10%' }}
-        whileHover={{ x: 0 }}
-        transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-        className="  hidden sm:flex  fixed top-1/2 -translate-y-1/2 left-0 bg-blue-600 text-white 
-                    items-center gap-2 rounded-r-full shadow-lg cursor-pointer 
-                   overflow-hidden group w-12 hover:w-52 transition-all duration-300 z-20"
-      >
-        {/* Circle / Badge */}
-        <div className="flex items-center justify-center w-12 h-12 bg-orange-500 flex-shrink-0">
-          <span className="text-lg font-bold">25+</span>
-        </div>
-
-        {/* Full Text on Hover */}
-        <span className="whitespace-nowrap text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-  <RiHotelLine className="inline mr-3 text-yellow-400 text-3xl" />
-  Wayside Amenities
-</span>
-
-      </motion.div>
+        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+        animate={{ x: ['-100%', '200%'] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "linear", repeatDelay: 1 }}
+      />
+    </motion.div>
 
       {/* Background Video */}
       <video
