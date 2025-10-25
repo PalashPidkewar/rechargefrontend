@@ -59,7 +59,9 @@ export default function FullScreenLocalVideo() {
   }, []);
 
   return (
-    <div className="relative w-screen min-h-[calc(100vh-90px)] sm:min-h-[100vh] md:h-screen overflow-hidden">
+    // w-screen
+      <div className="relative w-full min-h-[calc(100vh-90px)] sm:min-h-[100vh] md:h-screen overflow-hidden">
+
       {/* ✅ Side Badge Component Code Inline */}
       <motion.div
         initial={{ x: '-10%' }}

@@ -8,7 +8,7 @@ import FullScreenYouTube from "./Home_Youtube_Video/page";
 import Home_aboutus from "./Home_AboutUS/page";
 import Home_Pathrecharge_conatct from "./Home_pathrecharge_contact/page";
 import BackToTopButton from "./components/BacktoTop";
-// import EnquireButton from "./components/EnquireBtn";
+import EnquireButton from "./components/EnquireBtn";
 import FeedbackForm from "./Home_Feedback_form/page";
 import Chatbot from "./Chatbot/page";
 
@@ -19,7 +19,7 @@ export default function Home() {
  < >
  <BackToTopButton/>
 
- {/* <EnquireButton/> */}
+ <EnquireButton/>
  <Chatbot/>
 
  <FullScreenYouTube/>
