@@ -2,7 +2,7 @@
 import "./globals.css";
 
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 export const metadata = {
   title: "Path Recharge",
   description:
@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className="w-full overflow-x-hidden font-oswald pt-[90px]  ">
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
         <Footer />
       </body>
