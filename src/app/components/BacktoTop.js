@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { FaArrowUp } from 'react-icons/fa';
 
+import { RiArrowUpDoubleLine } from "react-icons/ri";
 const BackToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -33,7 +33,7 @@ const BackToTopButton = () => {
         ${isVisible ? 'opacity-100 pointer-events-auto animate-fadeIn' : 'opacity-0 pointer-events-none'}`}
       aria-label="Scroll to top"
     >
-      <FaArrowUp size={20} />
+      <RiArrowUpDoubleLine size={30} />
     </button>
   );
 };

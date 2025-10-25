@@ -58,8 +58,8 @@ function Wayside() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
 
-                className="text-4xl font-bold fonty  text-[#0078AE]  lg:pl-8">
-                <span className="text-5xl">O</span>ur Projects
+                className="text-3xl sm:text-4xl lg:text-4xl font-bold fonty  text-[#0078AE]  lg:pl-8">
+                <span className="text-4xl sm:text-5xl lg:text-5xl">O</span>ur Projects
                 <span className="text-orange-500">.</span>
               </motion.h1>
 

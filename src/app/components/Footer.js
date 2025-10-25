@@ -40,7 +40,7 @@ const Footer = () => {
           </p>
 
 
-          <div className="flex gap-12 justify-center lg:justify-start text-white text-xl">
+          <div className="flex gap-12 pl-10 sm:pl-0 justify-center lg:justify-start text-white text-xl">
             <a href="https://www.facebook.com/pathltd/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
             <a href="https://www.instagram.com/pathrecharge/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
             <a href="https://www.linkedin.com/company/path-recharge/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>

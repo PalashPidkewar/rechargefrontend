@@ -8,20 +8,20 @@ const GlobalFootprint = () => {
   const headingInView = useInView(headingRef, { once: true });
 
   return (
-    <div className="bg-white py-12 px-4 md:px-10 lg:px-28">
+    <div className="bg-white pt-6 lg:py-12 px-4 md:px-10 lg:px-28">
       
       {/* Top Row: Heading Left, Description Right */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 items-start mb-10">
         {/* Left: Heading */}
         <motion.h1
           ref={headingRef}
           initial={{ opacity: 0, y: -30 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold fonty text-[#0078AE]"
+          className="text-3xl sm:text-4xl lg:text-4xl  font-bold fonty text-[#0078AE]"
         >
-          <span className="text-5xl">P</span>an India Network
-          <span className="text-orange-500">.</span>
+          <span className="text-4xl sm:text-5xl lg:text-5xl">P</span>an India Network
+          <span className="text-orange-500">..</span>
         </motion.h1>
 
         {/* Right: Description */}

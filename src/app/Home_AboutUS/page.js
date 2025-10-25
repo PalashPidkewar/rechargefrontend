@@ -103,8 +103,8 @@ const Home_aboutus = () => {
             transition={{ duration: 0.8 }}
             className="text-3xl sm:text-4xl lg:text-4xl font-bold fonty text-[#0078AE]"
           >
-            <span className="text-5xl sm:text-5xl lg:text-5xl">A</span>bout Us
-            <span className="text-orange-500">.</span>
+            <span className="text-4xl sm:text-5xl lg:text-5xl">A</span>bout Us
+            <span className="text-orange-500">..</span>
           </motion.h2>
 
           {/* Share Button (Right Side) */}

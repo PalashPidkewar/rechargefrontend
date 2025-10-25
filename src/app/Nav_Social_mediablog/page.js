@@ -55,9 +55,9 @@ export default function NewsroomSection() {
               initial={{ opacity: 0, y: -30 }}
               animate={headingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="text-4xl sm:text-4xl md:text-5xl font-bold fonty text-[#0078AE]"
+              className="text-3xl sm:text-4xl lg:text-4xl font-bold fonty text-[#0078AE]"
             >
-              <span className="text-5xl sm:text-5xl">N</span>ews Room
+              <span className="text-4xl sm:text-5xl lg:text-5xl">N</span>ews Room
               <span className="text-orange-500">..</span>
             </motion.h1>
           </div>
@@ -87,46 +87,46 @@ export default function NewsroomSection() {
               {newsData.length === 0 ? (
                 <p className="text-sm text-gray-700 mt-2">Loading news...</p>
               ) : (
-                <div key={currentNews?.id} className="relative">
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mt-2">
-                    {currentNews?.title}
-                  </h2>
-                  <p className="text-sm text-gray-700 mt-4">
-                    {currentNews?.description}
-                  </p>
+                <div key={currentNews.id} className="relative">
+  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mt-2">
+    {currentNews.title}
+  </h2>
+  <p className="text-sm text-gray-700 mt-2">
+    {currentNews.description}
+  </p>
 
+  <div className="flex justify-end mt-4 space-x-4">
+    {/* Instagram */}
+    <a
+      href="https://www.instagram.com/path_india/?hl=en"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-pink-600 hover:scale-110 transition-transform"
+    >
+      <FaInstagram size={24} />
+    </a>
 
+    {/* YouTube */}
+    <a
+      href="https://www.youtube.com/@PathRecharge"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-red-600 hover:scale-110 transition-transform"
+    >
+      <FaYoutube size={24} />
+    </a>
 
-                  {/* ✅ Social Icons - Responsive */}
-                  <div className="flex flex-row lg:flex-col items-center lg:items-end mt-4 space-x-4 lg:space-x-0 lg:space-y-3">
-                    <a
-                      href="https://www.instagram.com/path_india/?hl=en"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-pink-600 hover:scale-110 transition-transform"
-                    >
-                      <FaInstagram size={24} />
-                    </a>
-
-                    <a
-                      href="https://www.youtube.com/@PathRecharge"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-red-600 hover:scale-110 transition-transform"
-                    >
-                      <FaYoutube size={24} />
-                    </a>
-
-                    <a
-                      href="https://www.linkedin.com/company/path-recharge/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-700 hover:scale-110 transition-transform"
-                    >
-                      <FaLinkedin size={24} />
-                    </a>
-                  </div>
-                </div>
+    {/* LinkedIn */}
+    <a
+      href="https://www.linkedin.com/company/path-recharge/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-700 hover:scale-110 transition-transform"
+    >
+      <FaLinkedin size={24} />
+    </a>
+  </div>
+</div>
               )}
             </div>
           </div>

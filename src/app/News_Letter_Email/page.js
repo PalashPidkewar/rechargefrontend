@@ -261,7 +261,7 @@ export default function Newsletter_Email() {
               onClick={() => setShowNewsroom((prev) => !prev)}
               className="px-5 py-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold rounded-full shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300 text-sm sm:text-base whitespace-nowrap"
             >
-              {showNewsroom ? "Newsletter →" : "NewsRoom →"}
+              {showNewsroom ? "Newsletter" : "NewsRoom"}
             </button>
           </div>
 
@@ -290,41 +290,46 @@ export default function Newsletter_Email() {
                     <p className="text-sm text-gray-700 mt-2">Loading news...</p>
                   ) : (
                     <div key={currentNews.id} className="relative">
-                      <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mt-2">{currentNews.title}</h2>
-                      <p className="text-sm text-gray-700 mt-2">{currentNews.description}</p>
-                   <div className="flex flex-col items-end mt-4 space-y-3">
-  {/* Instagram */}
-  <a
-    href="https://www.instagram.com/path_india/?hl=en"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-pink-600 hover:scale-110 transition-transform"
-  >
-    <FaInstagram size={24} />
-  </a>
+  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mt-2">
+    {currentNews.title}
+  </h2>
+  <p className="text-sm text-gray-700 mt-2">
+    {currentNews.description}
+  </p>
 
-  {/* YouTube */}
-  <a
-    href="https://www.youtube.com/@PathRecharge"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-red-600 hover:scale-110 transition-transform"
-  >
-    <FaYoutube size={24} />
-  </a>
+  <div className="flex justify-end mt-4 space-x-4">
+    {/* Instagram */}
+    <a
+      href="https://www.instagram.com/path_india/?hl=en"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-pink-600 hover:scale-110 transition-transform"
+    >
+      <FaInstagram size={24} />
+    </a>
 
-  {/* LinkedIn */}
-  <a
-    href="https://www.linkedin.com/company/path-recharge/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-blue-700 hover:scale-110 transition-transform"
-  >
-    <FaLinkedin size={24} />
-  </a>
+    {/* YouTube */}
+    <a
+      href="https://www.youtube.com/@PathRecharge"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-red-600 hover:scale-110 transition-transform"
+    >
+      <FaYoutube size={24} />
+    </a>
+
+    {/* LinkedIn */}
+    <a
+      href="https://www.linkedin.com/company/path-recharge/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-700 hover:scale-110 transition-transform"
+    >
+      <FaLinkedin size={24} />
+    </a>
+  </div>
 </div>
 
-                    </div>
                   )}
                 </>
               ) : (
