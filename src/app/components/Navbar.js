@@ -572,7 +572,7 @@ const Navbar = () => {
 
   const moreItems = [
     { label: 'Partner With Us', href: '/NavgrowwithRecharge' },
-    { label: 'Video', href: '/Nav_Video' },
+    { label: 'Video', href: '/Navvideos' },
   ];
 
   // Detect mobile/desktop
@@ -862,10 +862,23 @@ const Navbar = () => {
               </div>
 
               {/* Divider */}
-              <div className="border-t border-gray-300 pt-2"></div>
+              {/* <div className="border-t border-gray-300 pt-2"></div> */}
+<div className="relative flex items-center justify-center -mt-5">
+  {/* Line */}
+  <div className="absolute w-full border-t border-gray-300"></div>
+
+  {/* Center Logo */}
+  <div className="bg-white px-1 z-5">
+    <img
+      src="/Image/removeaboutbackground.png"  // 🔁 replace with your logo path
+      alt="Path Recharge Logo"
+      className="h-14 w-auto object-contain"
+    />
+  </div>
+</div>
 
               {/* Login Button (Left) & Social Icons (Right) */}
-              <div className="flex items-center justify-between px-3 py-2">
+              <div className="flex items-center justify-between px-3 -py-1">
                 {/* Left - Login Button */}
                 <Link
                   href="/Login"

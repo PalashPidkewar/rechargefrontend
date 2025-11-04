@@ -370,12 +370,8 @@ const Footer = () => {
           </div>
 
           <p className="text-xs sm:text-sm lg:text-base mb-4 sm:mb-5 md:mb-6 max-w-md font-normal leading-relaxed px-2 sm:px-0">
-            We are a globally recognised manufacturer and exporter of
-            high-quality galvanised and fabricated steel products. Here is our
-            journey towards success, commitment and determination. Path
-            India&apos;s footprint on integrating its combined expertise into
-            manufacturing artistry has made it a worldwide leader in
-            manufacturing.
+         Path Recharge is a one-of-a-kind initiative redefining Way Side Amenities (WSA) across India’s national highways.
+         From fuel stations, EV charging points, and hygienic restrooms to restaurants, convenience stores, and emergency facilities, every Path Recharge center is thoughtfully planned to ensure safe and refreshing pit stops on long journeys.
           </p>
 
           <div className="flex gap-6 sm:gap-8 md:gap-10 lg:gap-12 justify-center lg:justify-start text-white text-lg sm:text-xl">

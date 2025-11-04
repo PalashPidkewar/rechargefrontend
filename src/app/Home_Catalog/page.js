@@ -141,6 +141,8 @@ import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import Link from "next/link";
 
+import { PiShareFatThin } from "react-icons/pi";
+
 const images = [
   "/catelog/images_pATH RECHARGE 2.jpg",
   "/catelog/images_path recharge.jpg",
@@ -211,19 +213,34 @@ export default function Home_Catelog() {
 
           {/* Header */}
           <div className="flex flex-col md:flex-row justify-between mb-12">
-            <div className="text-left">
-              <motion.h1
-                ref={headingRef}
-                initial={{ opacity: 0, y: -30 }}
-                animate={headingInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8 }}
-                className="text-3xl sm:text-4xl font-bold fonty text-[#0078AE] lg:pl-8"
-              >
-                <span className="text-4xl sm:text-5xl">C</span>atelog
-                <span className="text-gray-400 text-sm"> gallery</span>                 
-                <span className="text-orange-500">..</span>
-              </motion.h1>
-            </div>
+            <div className="flex items-center justify-between w-full">
+  {/* Left Heading */}
+  <motion.h1
+    ref={headingRef}
+    initial={{ opacity: 0, y: -30 }}
+    animate={headingInView ? { opacity: 1, y: 0 } : {}}
+    transition={{ duration: 0.8 }}
+    className="text-3xl sm:text-4xl font-bold fonty text-[#0078AE] lg:pl-8"
+  >
+    <span className="text-4xl sm:text-5xl">C</span>atelog
+    <span className="text-gray-400 text-sm"> gallery</span>
+    <span className="text-orange-500">..</span>
+  </motion.h1>
+
+  {/* Right Share Button */}
+  <Link
+      href="/Navvideos"
+      className="flex flex-col items-center justify-center text-gray-800 py-2 lg:px-40 px-4 hover:text-[#0078AE] transition-all"
+    >
+      {/* Icon on top */}
+      <PiShareFatThin size={24} />
+
+      {/* Text below */}
+      <span className="mt-1 text-sm sm:text-base text-blue-300">Video</span>
+    </Link>
+
+</div>
+
 
             <div className="text-left max-w-full md:max-w-lg mt-4 md:mt-0">
               <p className="text-gray-400 text-sm sm:text-base md:text-base lg:text-base">
