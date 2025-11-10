@@ -220,22 +220,11 @@ export default function Home_Catelog() {
                 <span className="text-orange-500">..</span>
               </motion.h1>
 
-              <Link
-                href="/Navvideos"
-                className="flex flex-col items-center justify-center text-gray-800 py-2 lg:px-40 px-4 hover:text-[#0078AE] transition-all"
-              >
-                <SiGoogledisplayandvideo360
-                  size={24}
-                  className="text-red-500 hover:text-green-400"
-                />
-                <span className="mt-1 text-sm sm:text-base text-blue-300">
-                  Video
-                </span>
-              </Link>
+            
             </div>
             <div className="text-left max-w-full md:max-w-lg mt-4 md:mt-0">
               <p className="text-gray-400 text-sm sm:text-base md:text-base lg:text-base">
-                Path Recharge is providing essential wayside amenities...
+                Path Recharge is providing essential wayside amenities for traveling — including clean restrooms, seating areas, water facilities and EV charging — all designed for comfort and convenience along the highway.
               </p>
             </div>
           </div>
@@ -322,47 +311,41 @@ export default function Home_Catelog() {
           {/* --- Mobile Layout (FIXED: col-span-2 on last odd item) --- */}
           <div className="md:hidden flex flex-col items-center mb-8">
             {/* 1. Paginated 2x2 Grid (Mobile) */}
-            <motion.div
-              className="grid grid-cols-2 gap-4 w-full"
-              key={thumbnailPage + "-mobile"} // मोबाइल के लिए अलग की
-              variants={container}
-              initial="hidden"
-              animate="show"
-            >
-              {currentThumbnails.map((img, localIndex) => {
-                const globalIndex = startIndex + localIndex;
+           <motion.div
+  className="grid grid-cols-2 gap-4 w-full"
+  key={thumbnailPage + "-mobile"}
+  variants={container}
+  initial="hidden"
+  animate="show"
+>
+  {currentThumbnails.map((img, localIndex) => {
+    const globalIndex = startIndex + localIndex;
+    const isLastItem = localIndex === currentThumbnails.length - 1;
+    const isOddPage = currentThumbnails.length % 2 !== 0;
+    const itemClass = isLastItem && isOddPage ? "col-span-2" : "";
 
-                // --- फिक्स: खाली जगह हटाने के लिए लॉजिक ---
-                const isLastItem = localIndex === currentThumbnails.length - 1;
-                const isOddPage = currentThumbnails.length % 2 !== 0;
-                const itemClass =
-                  isLastItem && isOddPage ? "col-span-2" : ""; // अगर आखिरी आइटम है और पेज पर 1 या 3 इमेज हैं, तो 'col-span-2' लगाओ
+    return (
+      <motion.div
+        key={globalIndex}
+        variants={item}
+        className={`group block relative p-0.5 rounded-lg transition-all duration-500 transform border-4 border-white 
+          shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.4)] hover:scale-105 ${itemClass}`}
+      >
+        <div
+          className={`relative w-full bg-white rounded-md overflow-hidden 
+            ${isLastItem && isOddPage ? "pb-[50%]" : "pb-[100%]"}`}
+        >
+          <img
+            src={img}
+            alt={`Thumbnail ${globalIndex + 1}`}
+            className="absolute inset-0 w-full h-full object-cover rounded-md group-hover:opacity-90 transition-opacity duration-300"
+          />
+        </div>
+      </motion.div>
+    );
+  })}
+</motion.div>
 
-                return (
-                  <motion.div
-                    key={globalIndex}
-                    variants={item}
-                    // --- यहाँ itemClass को जोड़ा गया है ---
-                    className={`group block relative p-0.5 rounded-lg transition-all duration-300 transform border-4 border-transparent shadow-lg ${itemClass}`}
-                  >
-                    <div
-                      className={`relative w-full 
-                        ${
-                          isLastItem && isOddPage
-                            ? "pb-[50%]" // 2:1 aspect ratio अगर col-span-2 है
-                            : "pb-[100%]" // 1:1 aspect ratio
-                        }`}
-                    >
-                      <img
-                        src={img}
-                        alt={`Thumbnail ${globalIndex + 1}`}
-                        className="absolute inset-0 w-full h-full object-cover rounded-md"
-                      />
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
 
             {/* 2. Pagination Buttons (Mobile) - कोई बदलाव नहीं */}
             <div className="flex justify-center gap-4 mt-4">
@@ -385,14 +368,31 @@ export default function Home_Catelog() {
           {/* --- End Mobile Layout --- */}
 
           {/* Explore More Link - कोई बदलाव नहीं */}
-          <div className="mt-4 sm:mt-8 text-center">
-            <Link
-              href="/Nav_Gallery"
-              className="inline-block bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-300"
-            >
-              Explore More Catelogs
-            </Link>
-          </div>
+   <div className="relative mt-4 sm:mt-8 text-center flex flex-col items-center">
+  {/* Explore More Catalogs Button (centered always) */}
+  <Link
+    href="/Nav_Gallery"
+    className="inline-block bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-300"
+  >
+    Explore More Catalogs
+  </Link>
+
+  {/* Video Button — right corner on large screens */}
+  <Link
+    href="/Navvideos"
+    className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col items-center text-gray-800 hover:text-[#0078AE] transition-all sm:right-10"
+  >
+    <SiGoogledisplayandvideo360
+      size={28}
+      className="text-red-500 hover:text-green-400"
+    />
+    <span className="mt-1 text-sm sm:text-base text-blue-400 font-semibold">
+      Video
+    </span>
+  </Link>
+</div>
+
+
         </div>
       </div>
 

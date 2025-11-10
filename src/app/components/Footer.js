@@ -458,7 +458,7 @@ const Footer = () => {
             </div>
             <div className="text-center">
               <h4 className="font-semibold mb-1 text-sm font-oswald">
-                CORPORATE OFFICE
+                HEAD OFFICE
               </h4>
               <p className="flex items-start gap-2 justify-center px-4">
                 <FaMapMarkerAlt className="text-orange-500 text-base mt-0.5 flex-shrink-0" />
@@ -492,7 +492,7 @@ const Footer = () => {
             </div>
             <div>
               <h4 className="font-semibold mb-2 text-sm md:text-base lg:text-lg font-oswald">
-                CORPORATE OFFICE
+                HEAD OFFICE
               </h4>
               <p className="flex items-start gap-2 pr-4 md:pr-8 lg:pr-10">
                 <FaMapMarkerAlt className="text-orange-500 text-base md:text-lg flex-shrink-0 mt-0.5" />
