@@ -36,9 +36,7 @@ const ShareButton = () => {
       }
     };
 
-    if (isOpen) {
-      window.addEventListener('click', handleClickOutside);
-    }
+    if (isOpen) window.addEventListener('click', handleClickOutside);
 
     return () => window.removeEventListener('click', handleClickOutside);
   }, [isOpen]);
@@ -66,7 +64,7 @@ const ShareButton = () => {
           className="
             relative
             bg-blue-200 text-[#0078AE] font-semibold
-            py-2 px-5
+            py-1.5 px-4
             text-xs sm:text-sm
             hover:bg-[#0078AE] hover:text-white
             transition-all duration-300
@@ -93,16 +91,16 @@ const ShareButton = () => {
           />
         </button>
 
-        {/* SOCIAL ICONS PANEL - Opens below button */}
+        {/* SOCIAL ICONS PANEL */}
         <div
           ref={panelRef}
           className="
             absolute top-28 right-0
-            flex flex-col bg-blue-200 shadow-2xl  p-1
+            flex flex-col bg-blue-200 shadow-2xl p-1
             transition-all duration-500 ease-in-out
             w-9 overflow-hidden origin-top
           "
-          style={{ 
+          style={{
             pointerEvents: isOpen ? 'auto' : 'none',
             maxHeight: isOpen ? '250px' : '0px',
             opacity: isOpen ? 1 : 0,
