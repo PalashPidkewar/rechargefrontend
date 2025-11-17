@@ -21,6 +21,7 @@ export default function Home() {
  <BackToTopButton/>
 
  <EnquireButton/>
+
  <Chatbot/>
 
  <FullScreenYouTube/>

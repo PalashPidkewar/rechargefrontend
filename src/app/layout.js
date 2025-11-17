@@ -1,6 +1,6 @@
 // app/layout.js
 import "./globals.css";
-
+import ShareButton from "./components/sharebtn";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 export const metadata = {
@@ -64,6 +64,7 @@ export default function RootLayout({ children }) {
 
       <body className="w-full overflow-x-hidden font-oswald pt-[90px]  ">
         <Navbar />
+        <ShareButton/>
         {children}
         <Footer />
       </body>
