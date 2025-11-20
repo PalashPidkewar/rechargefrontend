@@ -86,8 +86,8 @@ const SolutionsPage = () => {
             transition={{ duration: 0.8 }}
             className="text-3xl sm:text-4xl font-bold fonty text-[#0078AE]"
           >
-            <span className="text-4xl sm:text-5xl">S</span>olutions
-            <span className="text-orange-500">..</span>
+            <span className="text-4xl sm:text-5xl">O</span>ur Intergrated Solution
+            <span className="text-orange-500"> ..</span>
           </motion.h2>
 
           <p className="text-gray-400 max-w-2xl text-sm sm:text-base md:pl-4">
@@ -113,10 +113,10 @@ const SolutionsPage = () => {
 
               {/* Right Text */}
               <div className="flex flex-col space-y-2">
-                <h3 className="text-lg font-semibold text-[#0078AE] group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-lg font-semibold text-[#0078AE] group-hover:text-blue-400 transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-gray-500 text-sm group-hover:text-orange-400 transition-colors duration-300">
+                <p className="text-gray-500 text-sm group-hover:text-gray-700 transition-colors duration-300">
                   {item.description}
                 </p>
               </div>

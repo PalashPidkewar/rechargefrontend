@@ -53,7 +53,7 @@ const ShareButton = () => {
     "flex justify-center items-center w-7 h-7 rounded-full p-2 my-1 text-white shadow-lg transition-transform duration-200 transform hover:scale-110";
 
   return (
-    <div className="fixed right-0 top-[40%] z-50">
+    <div className="fixed right-0 top-[55%] z-50">
       
       {/* SHARE BUTTON */}
       <div className="relative">
@@ -96,7 +96,7 @@ const ShareButton = () => {
           ref={panelRef}
           className="
             absolute top-28 right-0
-            flex flex-col bg-blue-200 shadow-2xl p-1
+            flex flex-col  shadow-2xl p-1
             transition-all duration-500 ease-in-out
             w-9 overflow-hidden origin-top
           "

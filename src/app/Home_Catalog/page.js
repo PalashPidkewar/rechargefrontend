@@ -139,7 +139,8 @@ import Link from "next/link";
 import { SiGoogledisplayandvideo360 } from "react-icons/si";
 // --- नेविगेशन के लिए नए आइकॉन ---
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-
+import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 const images = [
   "/catelog/images_pATH RECHARGE 2.jpg",
   "/catelog/images_path recharge.jpg",
@@ -294,14 +295,14 @@ export default function Home_Catelog() {
                   className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
                   aria-label="Previous thumbnails"
                 >
-                  <HiChevronLeft className="w-6 h-6" />
+                  <MdKeyboardDoubleArrowLeft  className="w-6 h-6" />
                 </button>
                 <button
                   onClick={handleNext}
                   className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
                   aria-label="Next thumbnails"
                 >
-                  <HiChevronRight className="w-6 h-6" />
+                  <MdKeyboardDoubleArrowRight  className="w-6 h-6" />
                 </button>
               </div>
             </div>
@@ -328,7 +329,7 @@ export default function Home_Catelog() {
       <motion.div
         key={globalIndex}
         variants={item}
-        className={`group block relative p-0.5 rounded-lg transition-all duration-500 transform border-4 border-white 
+        className={`group block relative p-0.5 rounded-lg transition-all duration-500 transform border-2 border-white 
           shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.4)] hover:scale-105 ${itemClass}`}
       >
         <div
@@ -354,14 +355,14 @@ export default function Home_Catelog() {
                 className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
                 aria-label="Previous thumbnails"
               >
-                <HiChevronLeft className="w-6 h-6" />
+                <MdKeyboardDoubleArrowLeft className="w-6 h-6" />
               </button>
               <button
                 onClick={handleNext}
                 className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
                 aria-label="Next thumbnails"
               >
-                <HiChevronRight className="w-6 h-6" />
+                <MdKeyboardDoubleArrowRight  className="w-6 h-6" />
               </button>
             </div>
           </div>

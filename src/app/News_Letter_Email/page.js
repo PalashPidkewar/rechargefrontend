@@ -225,7 +225,7 @@ export default function Newsletter_Email() {
 
   return (
     <>
-      <section className="py-10 px-4 lg:mt-2 mt-3 relative"
+      <section className="hidden md:block py-10 px-4 lg:mt-2 mt-3 relative"
         style={{
           backgroundImage: "url('/homecontactimg/gpt4.jpg')",
           backgroundSize: "cover",
